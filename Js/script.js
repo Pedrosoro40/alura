@@ -1,5 +1,5 @@
 let cardContainer = document.querySelector('.card-container');
-let searchInput = document.querySelector('#searchInput'); // Adicionado para a busca
+let searchInput = document.querySelector('campoBusca'); // Adicionado para a busca
 let dados = [];
 
 async function iniciarBusca() {
@@ -27,7 +27,7 @@ function renderizarCards(dados) {
 }
 
 function filtrarDados() {
-    const termoBusca = searchInput.value.toLowerCase();
+    const termoBusca = campoBusca.value.toLowerCase();
     const dadosFiltrados = dados.filter(dado => {
         return dado.nome.toLowerCase().includes(termoBusca) ||
                dado.descricao.toLowerCase().includes(termoBusca);
