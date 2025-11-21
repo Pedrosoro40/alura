@@ -1,41 +1,39 @@
-let cardContainer = document.querySelector('.card-container');
-let searchInput = document.querySelector('campoBusca'); // Adicionado para a busca
+let cardContainer = document.querySelector(".card-container");
+let campoBusca = document.querySelector("header input");
 let dados = [];
 
 async function iniciarBusca() {
-    try {
-        let resposta = await fetch('Js/data.json');
-        dados = await resposta.json();
-        renderizarCards(dados);
-    } catch (error) {
-        console.error("Falha ao buscar ou processar os dados:", error);
+    // Se os dados ainda não foram carregados, busca do JSON.
+    if (dados.length === 0) {
+        try {
+            let resposta = await fetch("data.json");
+            dados = await resposta.json();
+        } catch (error) {
+            console.error("Falha ao buscar dados:", error);
+            return; // Interrompe a execução se houver erro
+        }
     }
-}
 
-function renderizarCards(dados) {
-    cardContainer.innerHTML = ''; // Limpa o container antes de renderizar
-    for (let dado of dados) {
-        let article = document.createElement('article');
-        article.classList.add("card");
-        // Corrigido: usando 'nome' e 'ano_criacao' do JSON e a sintaxe do link
-        article.innerHTML = `<h2>${dado.nome}</h2>
-                <p>Ano de criação: ${dado.ano_criacao}</p>
-                <p>${dado.descricao}.</p>
-                <a href="${dado.link}" target="_blank">Saiba mais</a>`
-        cardContainer.appendChild(article);
-    }
-}
-
-function filtrarDados() {
     const termoBusca = campoBusca.value.toLowerCase();
-    const dadosFiltrados = dados.filter(dado => {
-        return dado.nome.toLowerCase().includes(termoBusca) ||
-               dado.descricao.toLowerCase().includes(termoBusca);
-    });
+    const dadosFiltrados = dados.filter(dado => 
+        dado.nome.toLowerCase().includes(termoBusca) || 
+        dado.descricao.toLowerCase().includes(termoBusca)
+    );
+
     renderizarCards(dadosFiltrados);
 }
 
-// Adiciona o evento de 'input' para buscar em tempo real
-searchInput.addEventListener('input', filtrarDados);
-
-iniciarBusca(); // Inicia o carregamento dos dados ao carregar a página
+function renderizarCards(dados) {
+    cardContainer.innerHTML = ""; // Limpa os cards existentes antes de renderizar novos
+    for (let dado of dados) {
+        let article = document.createElement("article");
+        article.classList.add("card");
+        article.innerHTML = `
+        <h2>${dado.nome}</h2>
+        <p>${dado.data_criacao}</p>
+        <p>${dado.descricao}</p>
+        <a href="${dado.link}" target="_blank">Saiba mais</a>
+        `
+        cardContainer.appendChild(article);
+    }
+}
