@@ -15,7 +15,7 @@
     "nome": "Python",
     "descricao": "Linguagem de alto nível, versátil e com sintaxe clara, extremamente popular em desenvolvimento web (Django, Flask), Data Science, Machine Learning e automação.",
     "data_criacao": "1991",
-    "link_oficial": "https://www.python.org/",
+    "link_oficial": "https://www.python.org/doc/",
     "tags": [
       "linguagem de programação",
       "backend",
@@ -40,7 +40,7 @@
     "nome": "Java",
     "descricao": "Linguagem robusta, orientada a objetos, amplamente usada em sistemas empresariais (enterprise), desenvolvimento Android nativo e aplicações de grande escala.",
     "data_criacao": "1995",
-    "link_oficial": "https://www.java.com/",
+    "link_oficial": "https://dev.java/",
     "tags": [
       "linguagem de programação",
       "backend",
@@ -66,7 +66,7 @@
     "nome": "SQL",
     "descricao": "Linguagem padrão para gerenciar e manipular bancos de dados relacionais (PostgreSQL, MySQL, SQL Server), indispensável para qualquer aplicação que use dados estruturados.",
     "data_criacao": "1974",
-    "link_oficial": "https://pt.wikipedia.org/wiki/SQL",
+    "link_oficial": "https://www.iso.org/standard/86631.html",
     "tags": [
       "linguagem de consulta",
       "banco de dados",
@@ -78,7 +78,7 @@
     "nome": "React",
     "descricao": "Uma biblioteca JavaScript para a construção de interfaces de usuário baseadas em componentes. Líder incontestável no desenvolvimento frontend moderno.",
     "data_criacao": "2013",
-    "link_oficial": "https://reactjs.org/",
+    "link_oficial": "https://react.dev/",
     "tags": [
       "biblioteca",
       "frontend",
@@ -535,7 +535,7 @@
     "nome": "C",
     "descricao": "Linguagem de programação imperativa de propósito geral, conhecida por sua eficiência e proximidade com o hardware, base para muitos sistemas operacionais.",
     "data_criacao": "1972",
-    "link_oficial": "https://www.iso.org/standard/74528.html",
+    "link_oficial": "https://www.open-std.org/jtc1/sc22/wg14/",
     "tags": [
       "linguagem de programação",
       "sistemas embarcados",
